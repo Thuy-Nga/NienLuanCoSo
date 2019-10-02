@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-package class diagram">
+  <ClassDiagramComponents>
+    <Class name="ButtonController" package="mysudoku.controller" visibility="public" xPosition="117.0" yPosition="18.0">
+      <Fields>
+        <Field name="game" type="Game" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Game" name="game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SudokuController" package="mysudoku.controller" visibility="public" xPosition="1122.0" yPosition="372.0">
+      <Fields>
+        <Field name="game" type="Game" visibility="private"/>
+        <Field name="sudokupanels" type="SudokuPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="SudokuPanel" name="sudokuPanel"/>
+          <Argument type="Game" name="game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mouseClicked" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseReleased" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseExited" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Game" package="mysudoku.model" visibility="public" xPosition="537.0" yPosition="18.0">
+      <Fields>
+        <Field name="phuongan" type="int[][]" visibility="private"/>
+        <Field name="game" type="int[][]" visibility="private"/>
+        <Field name="kiemtra" type="boolean" visibility="private"/>
+        <Field name="trogiup" type="boolean" visibility="private"/>
+        <Field name="sochon" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="taoGame" returnType="void" visibility="public"/>
+        <Method name="kiemtraGame" returnType="void" visibility="public"/>
+        <Method name="taoPhuongAn" returnType="int[][]" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getSoThichHop" returnType="int" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="List&lt;Integer&gt;" name="dsSo"/>
+        </Method>
+        <Method name="ktX" returnType="boolean" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="so"/>
+        </Method>
+        <Method name="ktY" returnType="boolean" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="so"/>
+        </Method>
+        <Method name="ktBlock" returnType="boolean" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="so"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="private">
+          <Argument type="int[][]" name="game"/>
+        </Method>
+        <Method name="ghiFile" returnType="void" visibility="public">
+          <Argument type="int[][]" name="sudoku"/>
+        </Method>
+        <Method name="copy" returnType="int[][]" visibility="private">
+          <Argument type="int[][]" name="game"/>
+        </Method>
+        <Method name="taoGame" returnType="int[][]" visibility="private">
+          <Argument type="int[][]" name="game"/>
+        </Method>
+        <Method name="taoGame" returnType="int[][]" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="List&lt;Integer&gt;" name="dsViTri"/>
+        </Method>
+        <Method name="hopLe" returnType="boolean" visibility="private">
+          <Argument type="int[][]" name="game"/>
+        </Method>
+        <Method name="hopLe" returnType="boolean" visibility="private">
+          <Argument type="int[][]" name="game"/>
+          <Argument type="int" name="index"/>
+          <Argument type="int[]" name="sophuongan"/>
+        </Method>
+        <Method name="getSo" returnType="int" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="getSoChon" returnType="void" visibility="public">
+          <Argument type="int" name="sochon"/>
+        </Method>
+        <Method name="getSoChon" returnType="int" visibility="public"/>
+        <Method name="setSo" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="number"/>
+        </Method>
+        <Method name="getHopLe" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="setHelp" returnType="void" visibility="public">
+          <Argument type="boolean" name="help"/>
+        </Method>
+        <Method name="getHelp" returnType="boolean" visibility="public"/>
+        <Method name="help_HopLe" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="kiemTraWin" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ButtonPanels" package="mysudoku.view" visibility="public" xPosition="12.0" yPosition="449.0">
+      <Fields>
+        <Field name="cbHelp" type="JCheckBox" visibility="package"/>
+        <Field name="bgNumbers" type="ButtonGroup" visibility="package"/>
+        <Field name="btnNumbers" type="JToggleButton[]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setControl" returnType="void" visibility="package">
+          <Argument type="ButtonController" name="btn"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="Observable" name="o"/>
+          <Argument type="Object" name="arg"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ButtonPanels_Option" package="mysudoku.view" visibility="public" xPosition="269.0" yPosition="332.0">
+      <Fields>
+        <Field name="btnNew" type="JButton" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setControl" returnType="void" visibility="package">
+          <Argument type="ButtonController" name="btn"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="Observable" name="o"/>
+          <Argument type="Object" name="arg"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Home" package="mysudoku.view" visibility="public" xPosition="293.0" yPosition="552.0">
+      <Fields>
+        <Field name="btnBD" type="JButton" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addEvents" returnType="void" visibility="private"/>
+        <Method name="addControls" returnType="void" visibility="private"/>
+        <Method name="showMyWin" returnType="void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MySudoku" package="mysudoku.view" visibility="public" xPosition="596.0" yPosition="692.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SubPanels" package="mysudoku.view" visibility="public" xPosition="823.0" yPosition="692.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNumber" returnType="void" visibility="public">
+          <Argument type="int" name="so"/>
+          <Argument type="boolean" name="userInput"/>
+        </Method>
+        <Method name="getSubPanelX" returnType="int" visibility="public"/>
+        <Method name="getSubPanelY" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SudokuPanel" package="mysudoku.view" visibility="public" xPosition="1098.0" yPosition="18.0">
+      <Fields>
+        <Field name="COLOR_CANDIDATE" type="Color" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="subPanels" type="SubPanels[][]" visibility="private"/>
+        <Field name="panels" type="JPanel[][]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setGame" returnType="void" visibility="public">
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="Observable" name="o"/>
+          <Argument type="Object" name="arg"/>
+        </Method>
+        <Method name="setController" returnType="void" visibility="public">
+          <Argument type="SudokuController" name="sudokuController"/>
+        </Method>
+        <Method name="setGameCheck" returnType="void" visibility="private">
+          <Argument type="Game" name="game"/>
+        </Method>
+        <Method name="setCandidates" returnType="void" visibility="private">
+          <Argument type="Game" name="game"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="Update" package="mysudoku.model" visibility="public" xPosition="1153.0" yPosition="652.0">
+      <Literals>
+        <Literal name="NEW"/>
+        <Literal name="CHECK"/>
+        <Literal name="SELECTED_NUMBER"/>
+        <Literal name="CANDIDATES"/>
+        <Literal name="HELP"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="game" source="mysudoku.controller.SudokuController" target="mysudoku.model.Game" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mysudoku.view.ButtonPanels_Option" target="mysudoku.controller.ButtonController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mysudoku.view.ButtonPanels" target="mysudoku.controller.ButtonController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="game" source="mysudoku.controller.ButtonController" target="mysudoku.model.Game" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mysudoku.view.SudokuPanel" target="mysudoku.controller.SudokuController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sudokupanels" source="mysudoku.controller.SudokuController" target="mysudoku.view.SudokuPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="mysudoku.view.SudokuPanel" target="mysudoku.model.Game" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
